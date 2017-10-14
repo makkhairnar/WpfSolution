@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<contacts>
+  <contact>
+    <Name>Mukund</Name>
+    <Phone>8655547093</Phone>
+    <Email>makk@gmail.com</Email>
+  </contact>
+  <contact>
+    <Name>Maya</Name>
+    <Phone>8898145153</Phone>
+    <Email>maya@gmail.com</Email>
+  </contact>
+  <contact>
+    <Name>Rahul</Name>
+    <Phone>9969710491</Phone>
+    <Email>Rahul@gmail.com</Email>
+  </contact>
+  <contact>
+    <Name>Pratik</Name>
+    <Phone>8655547093</Phone>
+    <Email>Pratik@gmail.com</Email>
+  </contact>
+</contacts>

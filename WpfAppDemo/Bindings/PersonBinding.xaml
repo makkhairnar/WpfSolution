@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfAppDemo.Bindings.Person12"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppDemo.Bindings"
+        mc:Ignorable="d"
+        Title="Person" Height="300" Width="300">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="20,25,0,0">
+            <TextBlock  Text="Name :" Height="25" Width="100" TextAlignment="Left"></TextBlock>
+            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3">
+                <TextBox x:Name="TxtName" Height="25" Width="120" TextAlignment="Left" Margin="0,0,0,0" Text="{Binding Name}" ></TextBox>
+            </Border>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="20,25,0,0">
+            <TextBlock  Text="Age :" Height="25" Width="100" TextAlignment="Left"></TextBlock>
+            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3">
+                <TextBox x:Name="TxtAge"  Height="25" Width="120" TextAlignment="Left" Margin="0,0,0,0" Text="{Binding Age}"></TextBox>
+            </Border>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="20,25,0,0">
+            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3">
+                <Button x:Name="BtnSubmit" Height="25" Width="50" Margin="0,0,0,0" Click="BtnSubmit_Click" >Assign</Button>
+            </Border>
+            <Button x:Name="BtnShow" Height="25" Width="50" Margin="75,5,5,5" Click="BtnShow_Click">
+                <AccessText>_Show</AccessText> 
+            </Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

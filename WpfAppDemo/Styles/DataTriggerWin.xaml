@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfAppDemo.Styles.DataTriggerWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppDemo.Styles"
+        mc:Ignorable="d"
+        Title="DataTriggerWin" Height="500" Width="700">
+    <StackPanel>
+        <StackPanel.Resources>
+            <Style TargetType="TextBox">
+                <Style.Triggers>
+                    <Trigger Property="IsFocused" Value="true">
+                        <Setter Property="Background" Value="Green"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="Button">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=Txt1,Path=Text}" Value="">
+                        <Setter Property="IsEnabled" Value="False"></Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </StackPanel.Resources>
+        <TextBox Height="20" Width="180" x:Name="Txt1" Margin="5,5,0,0" />
+        <TextBox Height="20" Width="180" x:Name="Txt2" Margin="5,5,0,0"/>
+        <TextBox Height="20" Width="180" x:Name="Txt3" Margin="5,5,0,0" />
+        <Button Content="Submit" Height="30" Width="50" Margin="5,5,0,0" />
+    </StackPanel>
+</Window>

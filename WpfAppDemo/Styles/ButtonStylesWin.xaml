@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfAppDemo.Styles.ButtonStylesWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppDemo.Styles"
+        mc:Ignorable="d"
+        Title="ButtonStylesWin" Height="300" Width="300">
+    <StackPanel>
+        <StackPanel.Resources>
+            <Style TargetType="Button">
+                <Setter Property="FontFamily" Value="Arial" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush StartPoint=".5,0" EndPoint=".5,1" >
+                            <GradientStop Color="Cyan" Offset="0"/>
+                            <GradientStop Color="Blue" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </StackPanel.Resources> 
+        <Button Content="First"  />
+        <Button Content="Second" Height="30" Width="250" Foreground="Chartreuse" Background="LightCoral"/>
+        <Button Content="Third" />
+        <Button Content="Four" Style="{StaticResource DBButtonType}" Height="50"/>
+    </StackPanel>
+</Window>

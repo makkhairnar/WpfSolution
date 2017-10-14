@@ -1,0 +1,16 @@
+﻿<Window x:Class="WpfAppDemo.Events.TunnelingEventWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppDemo.Events"
+        mc:Ignorable="d"
+        Title="TunnelingEventWin" Height="300" Width="300">
+    <StackPanel x:Name="Root">
+        <StackPanel x:Name="Inner">
+            <Button x:Name="Btn1" Height="150" Width="150">
+                <CheckBox x:Name="chk1" Content="Click Me"/>
+            </Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

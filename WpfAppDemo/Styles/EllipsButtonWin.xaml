@@ -1,0 +1,41 @@
+﻿<Window x:Class="WpfAppDemo.Styles.EllipsButtonWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppDemo.Styles"
+        mc:Ignorable="d"
+        Title="EllipsButtonWin" Height="300" Width="300">
+    <Grid>
+        <Grid.Resources>
+            <ControlTemplate TargetType="Button" x:Key="EllipseButton">
+                <Grid>
+                    <Ellipse  Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Fill="{TemplateBinding Background}" x:Name="Main" >
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush StartPoint=".5,0" EndPoint=".5,1">
+                                <GradientStop Color="Yellow" Offset="0"/>
+                                <GradientStop Color="Red" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>                        
+                    </Ellipse>
+                    <Ellipse Margin="10" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Fill="{TemplateBinding Background}" x:Name="Main2" >
+                        <Ellipse.Stroke>
+                            <LinearGradientBrush StartPoint=".5,0" EndPoint=".5,1">
+                                <GradientStop Color="Orange" Offset="0"/>
+                                <GradientStop Color="Brown" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Stroke>
+                    </Ellipse>
+                    <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"></ContentPresenter>
+                    
+                </Grid>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsPressed" Value="true">
+                        <Setter Property="Opacity" Value="25"/>
+                    </Trigger>
+                </ControlTemplate.Triggers> 
+            </ControlTemplate>
+        </Grid.Resources>
+        <Button Content="Click Me" Template="{StaticResource EllipseButton}" Height="150" Width="150" x:Name="BtnClick" Background="Cyan" Click="BtnClick_Click" ></Button>
+    </Grid>
+</Window>

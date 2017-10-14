@@ -1,0 +1,103 @@
+﻿<Window x:Class="WpfAppDemo.Work.UserInfoWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppDemo.Work"
+        mc:Ignorable="d"
+        Title="UserInfoWin" Height="300" Width="700">
+    <Grid>
+        <Grid.Resources>
+            <!--<DataTemplate x:Key="UserTemplate">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding UName}" Style="{StaticResource DisplayTextBlock}"></TextBlock>
+                    <TextBlock Text="{Binding Age}" Style="{StaticResource DisplayTextBlock}"></TextBlock>
+                    <TextBlock Text="{Binding FavColor}" Style="{StaticResource DisplayTextBlock}"></TextBlock>
+                </StackPanel>
+            </DataTemplate>-->
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                <TextBlock Text="User Name:" Height="20" Width="100" TextAlignment="Left"></TextBlock>
+                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3">
+                    <TextBox x:Name="TxtName" Height="25" Width="120" TextAlignment="Left" Margin="0,0,0,0"></TextBox>
+                </Border>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20,5,0,0">
+                <TextBlock Text="User Age :" Height="20" Width="100" TextAlignment="Left"></TextBlock>
+                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3">
+                    <TextBox x:Name="Txtage" Height="25" Width="120" TextAlignment="Left" Margin="0,0,0,0"></TextBox>
+                </Border>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20,5,0,0">
+                <TextBlock Text="Fav Color :" Height="20" Width="100" TextAlignment="Left"></TextBlock>
+                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3">
+                    <TextBox x:Name="Txtcolor" Height="25" Width="120" TextAlignment="Left" Margin="0,0,0,0"></TextBox>
+                </Border>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="130,25,0,0" >
+                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3">
+                    <Button Height="25" Width="100" Margin="0,0,0,0"  x:Name="AddNewUser" Click="AddNewUser_Click" >Add User</Button>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="10,10,0,0" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Left" Width="541" Margin="0,0,-527,0" >
+                    <StackPanel.Resources>
+                        <DataTemplate x:Key="ContactTemplate">
+                            <StackPanel Orientation="Horizontal">
+                                <Border Style="{StaticResource CoralBorder}">
+                                    <TextBlock Text="{Binding UName}" Style="{StaticResource DisplayTextBlock}"/>
+                                </Border>
+                                <Border Style="{StaticResource BlackBorder}">
+                                    <TextBlock Text="{Binding FavColor}" Style="{StaticResource RDisplayTextBlock}"/>
+                                </Border>
+                                <Border Style="{StaticResource CoralBorder}">
+                                    <TextBlock Text="{Binding Age}" Style="{StaticResource RDisplayTextBlock}"/>
+                                </Border>
+                                <Border Style="{StaticResource CoralBorder}">
+                                    <Rectangle Height="25" Width="25" Fill="{Binding FavColor}" />
+                                </Border>
+                            </StackPanel>
+                        </DataTemplate>
+                    </StackPanel.Resources>
+                    <ListBox Margin="10,0,0,0"    ItemsSource="{Binding}" MinHeight="100" MaxWidth="250" IsSynchronizedWithCurrentItem="True" ItemTemplate="{StaticResource ContactTemplate}"  ></ListBox>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Margin="10,10,0,0" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0" >
+                    <TextBlock Text="UName :"  Height="20" Width="50" TextAlignment="Left"  />
+                    <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3">
+                        <TextBox x:Name="TxtOUName" Width="120" Text="{Binding UName,Mode=TwoWay}"  ></TextBox>
+                    </Border>
+                    <TextBlock Text="UAge :" Height="20" Width="50" TextAlignment="Left" />
+                    <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3">
+                        <TextBox x:Name="TxtOUAge"  Width="120" Text="{Binding Age,Mode=TwoWay}" ></TextBox>
+                    </Border>
+                    <TextBlock Text="UColor :" Height="20" Width="50" TextAlignment="Left" />
+                    <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3">
+                        <TextBox x:Name="TxtOUColor" Width="120" Text="{Binding FavColor,Mode=TwoWay}"  ></TextBox>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+
+
+    </Grid>
+
+</Window>

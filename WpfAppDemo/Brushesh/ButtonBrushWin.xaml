@@ -1,0 +1,20 @@
+﻿<Window x:Class="WpfAppDemo.Brushesh.ButtonBrushWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppDemo.Brushesh"
+        mc:Ignorable="d"
+        Title="ButtonBrushWin" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0"   Content="First" Background="{StaticResource AlinearB1}" Height="45" />
+        <Button Grid.Row="1"   Content="Second" Background="{StaticResource AlinearB2}" Height="45" />
+        <Button Grid.Row="2"   Content="Third" Background="{StaticResource RBrush1}" Height="75"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfAppDemo.Work.LoginLayout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppDemo.Work"
+        mc:Ignorable="d"
+        Title="LoginLayout" Height="300" Width="300">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="20,25,0,0">
+            <TextBlock Text="User ID:" Height="25" Width="100" TextAlignment="Left"></TextBlock>
+            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3">
+             <TextBox Height="25" Width="120" TextAlignment="Left" Margin="0,0,0,0"></TextBox>
+            </Border>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="20,25,0,0">
+            <TextBlock Text="Password :" Height="25" Width="100" TextAlignment="Left"></TextBlock>
+            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3">
+                <TextBox Height="25" Width="120" TextAlignment="Left" Margin="0,0,0,0"></TextBox>
+            </Border>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="20,25,0,0">
+            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3">
+                <Button Height="25" Width="50" Margin="0,0,0,0">Login</Button>
+            </Border>
+            <Button Template="{StaticResource EllipseButton}" Height="25" Width="50" Margin="75,5,5,5">Clear</Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

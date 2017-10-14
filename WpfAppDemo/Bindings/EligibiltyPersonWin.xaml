@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfAppDemo.Bindings.EligibiltyPersonWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppDemo.Bindings"
+        xmlns:conv="clr-namespace:WpfAppDemo.Converter"
+        mc:Ignorable="d"
+        Title="EligibiltyPersonWin" Height="300" Width="300">
+    <Window.Resources>
+        <local:Person Age="10" Name="Mukund" x:Key="PersonObject"/>
+        <conv:EligibilityConverter x:Key="EEC" />
+    </Window.Resources> 
+    <StackPanel DataContext="{StaticResource PersonObject}">
+        <StackPanel Orientation="Horizontal" Margin="20,25,0,0">
+            <TextBlock  Text="Name :" Height="25" Width="100" TextAlignment="Left"></TextBlock>
+            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3">
+                <TextBox x:Name="TxtName" Height="25" Width="120" TextAlignment="Left" Margin="0,0,0,0" Text="{Binding Name}" ></TextBox>
+            </Border>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="20,25,0,0">
+            <TextBlock  Text="Age :" Height="25" Width="100" TextAlignment="Left"></TextBlock>
+            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3">
+                <TextBox x:Name="TxtAge"  Height="25" Width="120" TextAlignment="Left" Margin="0,0,0,0" Text="{Binding Age}"></TextBox>
+            </Border>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="20,25,0,0">
+            <TextBlock Text="Eligible : " Style="{StaticResource RDisplayTextBlock}"/>
+            <TextBox Text="{Binding Age,Converter={StaticResource EEC}}" x:Name="SName" Height="25" Width="100" TextAlignment="Right" Padding="0,4,0,0" />
+        </StackPanel>
+    </StackPanel>
+</Window>
